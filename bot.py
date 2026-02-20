@@ -4,8 +4,8 @@ import os
 
 app = Flask(__name__)
 
-ID_INSTANCE = os.getenv("7107523876")
-API_TOKEN = os.getenv("ab8b2d61db724012a48bbac216cab074f7303236b2aa48faa5")
+ID_INSTANCE = os.getenv("ID_INSTANCE")
+API_TOKEN = os.getenv("API_TOKEN")
 
 
 def send_message(chat_id, text):
@@ -22,7 +22,7 @@ def send_message(chat_id, text):
 
 @app.route("/")
 def home():
-    return "Bot is running 🚀"
+    return "Bot is running brooooo 🚀"
 
 
 @app.route("/webhook", methods=["POST"])
@@ -39,7 +39,6 @@ def webhook():
 
         if "привет" in message:
             send_message(sender, "👋 Привет! Production бот работает!")
-
         else:
             send_message(sender, "Напиши 'привет'")
 
